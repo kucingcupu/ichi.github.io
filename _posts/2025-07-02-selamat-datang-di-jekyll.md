@@ -2,7 +2,7 @@
 layout: post
 title: "Selamat Datang di Jekyll!"
 date: 2025-07-02 20:00:00 +0700
-categories: general
+categories: jekyll
 ---
 
 Ini adalah postingan blog pertama Anda. Selamat datang di dunia Jekyll!
