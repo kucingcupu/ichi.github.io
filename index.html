@@ -13,6 +13,9 @@ paginate_path: "/page:num/"
       {{ post.content | strip_html | truncatewords: 30 }} {# Kode baru di sini #}
       <a href="{{ post.url | relative_url }}">Read More</a>
     </div>
+    {% unless forloop.last %} {# Ini untuk memastikan HR tidak muncul setelah artikel terakhir #}
+      <hr> {# Tambahkan garis batas di sini #}
+    {% endunless %}
   {% endfor %}
 </div>
 
