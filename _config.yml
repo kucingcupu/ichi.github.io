@@ -22,8 +22,15 @@ kramdown:
       line_numbers: true # Menampilkan nomor baris pada blok kode
       css_classes: "highlight" # Kelas CSS yang akan digunakan untuk styling
 theme: minima # Anda bisa menggunakan tema default atau membuatnya sendiri
+
+
+# Pengaturan untuk Paginasi Jekyll
+paginate: 5 # Jumlah postingan per halaman
+paginate_path: "/page:num/" # Struktur URL untuk halaman paginasi (misal: /page2/, /page3/)
+
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
