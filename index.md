@@ -6,21 +6,9 @@ title: Beranda
 
   <h1 class="page-heading">Postingan Terbaru</h1>
 
-  <ul class="post-list">
-    {%- for post in paginator.posts -%} {# LOOP INI BERUBAH: Mengulang postingan untuk halaman saat ini #}
-    <li>
-      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-      <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-    </li>
-    {%- endfor -%}
-  </ul>
-
   {# --- BAGIAN PAGINASI DIMULAI DI SINI --- #}
+  {# Penting: Tidak ada loop `post-list` di sini untuk daftar postingan #}
+
   {% if paginator.total_pages > 1 %} {# Hanya tampilkan navigasi jika ada lebih dari 1 halaman #}
   <div class="pagination">
     {% if paginator.previous_page %}
