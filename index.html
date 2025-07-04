@@ -6,10 +6,7 @@ title: Beranda
 
   <h1 class="page-heading">Postingan Terbaru</h1>
 
-  {# --- BAGIAN PAGINASI DIMULAI DI SINI --- #}
-  {# Penting: Tidak ada loop `post-list` di sini untuk daftar postingan #}
-
-  {% if paginator.total_pages > 1 %} {# Hanya tampilkan navigasi jika ada lebih dari 1 halaman #}
+  {% if paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
@@ -36,8 +33,6 @@ title: Beranda
     {% endif %}
   </div>
   {% endif %}
-  {# --- BAGIAN PAGINASI BERAKHIR DI SINI --- #}
-
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
 </div>
