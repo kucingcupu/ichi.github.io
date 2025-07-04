@@ -12,10 +12,11 @@ paginate_path: "/page:num/"
       <p class="post-meta">{{ post.date | date: "%b %d, %Y" }}</p>
       {{ post.content | strip_html | truncatewords: 30 }}
       <a href="{{ post.url | relative_url }}">Read More</a>
-    </div>
+    </div><br>
     {% unless forloop.last %}
       <hr>
     {% endunless %}
+      <br>
   {% endfor %}
 </div>
 
