@@ -500,3 +500,32 @@ img {
     margin: 0 auto;
 }
 
+/* --- Aturan untuk Blok Kode Responsif --- */
+pre,
+code {
+    /* Pastikan kode membungkus dan menampilkan scroll jika baris terlalu panjang */
+    white-space: pre-wrap;       /* Memungkinkan teks membungkus dalam elemen */
+    word-wrap: break-word;       /* Memungkinkan kata-kata panjang terpecah untuk membungkus */
+    word-break: break-all;       /* Memaksa pemecahan kata untuk menghindari overflow */
+    overflow-x: auto;            /* Menambahkan scroll horizontal jika baris tetap terlalu panjang */
+    -webkit-overflow-scrolling: touch; /* Meningkatkan scroll di perangkat sentuh */
+    
+    /* Opsional: Sesuaikan padding atau warna latar belakang agar lebih rapi */
+    padding: 1em;
+    background-color: #f8f8f8; /* Contoh warna latar belakang */
+    border-radius: 4px;        /* Contoh sudut membulat */
+    font-size: 0.9em;          /* Contoh ukuran font */
+}
+
+/* Untuk elemen code inline (di dalam paragraf) */
+p code, li code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #eee; /* Contoh latar belakang untuk kode inline */
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+/* --- Akhir Aturan Kode Responsif --- */
+
