@@ -5,6 +5,6 @@ date: 2025-07-04 13:00:00 +0700
 categories: jekyll
 ---
 
-Dalam menampilkan gambar untuk bahasa markdown seperti yang terilahat dibawah ini;
+Dalam menampilkan gambar untuk bahasa markdown seperti yang terilahat dibawah ini jika menggunakan penyimpanan google drive;
 
-![Ini adalah gambar pernikahan](https://drive.google.com/uc?export=view&id=1aBcDeFgHiJkLmNoPqRsTuVwXyZ)
+![Ini adalah gambar pernikahan](https://drive.google.com/uc?id=1aBcDeFgHiJkLmNoPqRsTuVwXyZ)
