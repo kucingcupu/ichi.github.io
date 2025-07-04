@@ -1,13 +1,8 @@
 /* assets/css/style.css */
 
-/* -- Reset Sederhana -- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* -- Variabel Warna & Font -- */
+/* ==========================================================================
+   1. Variabel Warna & Font
+   ========================================================================== */
 :root {
   --text-color: #333;
   --link-color: #007bff;
@@ -17,9 +12,24 @@
   --font-family: 'Inter', sans-serif; /* Pastikan font ini diimpor jika ingin digunakan */
   --mobile-nav-width: 280px; /* Lebar navigasi mobile */
   --overlay-bg: rgba(0, 0, 0, 0.5); /* Warna overlay */
+  --code-bg-light: #f8f8f8;
+  --code-bg-dark: #e0e0e0;
+  --code-font-family: 'Fira Code', 'Roboto Mono', monospace; /* Font monospace untuk kode */
 }
 
-/* -- Gaya Dasar -- */
+/* ==========================================================================
+   2. Reset & Global Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Pastikan padding dan border termasuk dalam lebar/tinggi elemen */
+}
+
+html {
+  font-size: 16px; /* Ukuran font dasar untuk perhitungan rem */
+}
+
 body {
   font-family: var(--font-family);
   line-height: 1.6;
@@ -32,7 +42,7 @@ body {
 }
 
 body.no-scroll { /* Ditambahkan oleh JS saat menu dibuka */
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -42,13 +52,18 @@ body.no-scroll { /* Ditambahkan oleh JS saat menu dibuka */
 }
 
 main {
-  flex: 1;
+  flex: 1; /* Pastikan main mengisi sisa ruang vertikal */
   padding: 40px 0;
 }
 
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-color);
 }
 
 p {
@@ -64,7 +79,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --- Header --- */
+/* ==========================================================================
+   4. Header
+   ========================================================================== */
 .site-header {
   background-color: var(--header-footer-bg);
   border-bottom: 1px solid var(--border-color);
@@ -86,8 +103,12 @@ a:hover {
   font-weight: bold;
   color: var(--text-color);
   /* Tidak perlu z-index di sini, karena toggle akan diatur lebih tinggi */
+  margin-bottom: 0; /* Pastikan tidak ada margin bawah tambahan */
 }
 
+/* ==========================================================================
+   5. Navigasi Desktop & Mobile Setup
+   ========================================================================== */
 /* Default (Desktop): Sembunyikan toggle, tampilkan nav-links */
 .mobile-nav-container { /* Pembungkus baru untuk overlay dan navigasi */
   display: flex; /* Untuk desktop, ini menampung site-nav */
@@ -110,13 +131,20 @@ a:hover {
   white-space: nowrap; /* Mencegah link patah baris */
 }
 
-.mobile-nav-overlay {
-    display: none; /* Sembunyikan overlay di desktop */
+.site-nav .page-link:hover {
+  color: var(--link-color); /* Perluas efek hover dari 'a' umum */
 }
 
-/* --- Daftar Postingan (di index.md) --- */
+.mobile-nav-overlay {
+  display: none; /* Sembunyikan overlay di desktop */
+}
+
+/* ==========================================================================
+   6. Daftar Postingan (di index.md)
+   ========================================================================== */
 .post-list {
   list-style: none;
+  padding: 0; /* Reset padding default dari list */
 }
 
 .post-list li {
@@ -132,9 +160,18 @@ a:hover {
 
 .post-link {
   font-size: 1.75em;
+  font-weight: 700; /* Post link biasanya tebal */
+  color: var(--text-color); /* Pastikan warna link postingan tetap terbaca */
 }
 
-/* --- Halaman Postingan --- */
+.post-link:hover {
+  color: var(--link-color); /* Efek hover untuk link postingan */
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   7. Halaman Postingan (Single Post)
+   ========================================================================== */
 .post-header {
   margin-bottom: 2em;
   text-align: center;
@@ -147,102 +184,74 @@ a:hover {
 
 .post-content {
   font-size: 1.1em;
+  line-height: 1.7; /* Tingkatkan readability */
 }
 
 .post-content h2 {
   margin-top: 1.5em;
 }
 
-/* --- Footer --- */
-.site-footer {
-  background-color: var(--header-footer-bg);
-  border-top: 1px solid var(--border-color);
-  padding: 20px 0;
-  font-size: 0.9em;
-  text-align: center;
-  color: #828282;
+/* ==========================================================================
+   8. Gambar Responsif (Universal)
+   ========================================================================== */
+img {
+  max-width: 100%; /* Gambar tidak akan melebihi lebar elemen induknya */
+  height: auto;    /* Tinggi akan menyesuaikan secara proporsional agar gambar tidak melar */
+  display: block;  /* Membantu menghilangkan spasi ekstra di bawah gambar */
+  margin: 0 auto;  /* Opsional: Memusatkan gambar */
 }
 
-/* --- Styling untuk Formulir Kontak --- */
-.contact-form-container {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 25px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Jika kamu menggunakan kelas khusus untuk gambar di Markdown (misal: ![alt text](url){: .my-image }) */
+.my-image { /* Ganti '.my-image' dengan nama kelas yang kamu pakai jika ada */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.contact-form-container label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-}
-
-.contact-form-container input[type="text"],
-.contact-form-container input[type="email"],
-.contact-form-container textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.contact-form-container textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form-container button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form-container button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.contact-form-container p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* --- Code Highlighting Styles (untuk Rouge/Pygments) --- */
-.highlight {
-  background-color: #f8f8f8; /* Latar belakang untuk blok kode */
+/* ==========================================================================
+   9. Kode Snippets (Blok & Inline)
+   ========================================================================== */
+/* Styling dasar untuk blok kode (highlight) */
+.highlight,
+pre { /* Menggabungkan aturan untuk .highlight dan <pre> */
+  background-color: var(--code-bg-light);
   padding: 1em;
   margin-bottom: 1em;
-  overflow-x: auto; /* Memungkinkan scroll horizontal untuk kode yang panjang */
+  overflow-x: auto; /* Menambahkan scroll horizontal jika baris tetap terlalu panjang */
+  -webkit-overflow-scrolling: touch; /* Meningkatkan scroll di perangkat sentuh */
   border-radius: 5px;
   line-height: 1.45;
   font-size: 0.9em;
-  font-family: 'Fira Code', 'Roboto Mono', monospace; /* Font monospace untuk kode */
+  font-family: var(--code-font-family);
+  white-space: pre-wrap;       /* Memungkinkan teks membungkus dalam elemen */
+  word-wrap: break-word;       /* Memungkinkan kata-kata panjang terpecah untuk membungkus */
+  word-break: break-all;       /* Memaksa pemecahan kata untuk menghindari overflow */
 }
 
 /* Styling untuk nomor baris (jika line_numbers: true) */
 .highlight .lineno {
   color: #aaaaaa;
   padding-right: 10px;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid var(--border-color);
   margin-right: 10px;
   user-select: none; /* Mencegah seleksi nomor baris */
 }
 
-/* Warna default untuk berbagai jenis kode */
+/* Styling untuk elemen code inline (di dalam paragraf atau list) */
+p code, li code, a code { /* Menambahkan <a> code jika ada link yang mengandung kode */
+  background-color: var(--code-bg-dark); /* Latar belakang lebih gelap untuk inline */
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: var(--code-font-family);
+  font-size: 0.9em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* Warna default untuk berbagai jenis kode (dari Rouge/Pygments) */
+/* Bagian ini biasanya tetap sama dan bisa tetap di bawah aturan umum code */
 .highlight .c { color: #888888 } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { color: #000000; font-weight: bold } /* Keyword */
@@ -304,7 +313,114 @@ a:hover {
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
-/* --- Media Queries untuk Responsif (Mobile) --- */
+
+/* ==========================================================================
+   10. Footer
+   ========================================================================== */
+.site-footer {
+  background-color: var(--header-footer-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 20px 0;
+  font-size: 0.9em;
+  text-align: center;
+  color: #828282;
+}
+
+/* ==========================================================================
+   11. Styling untuk Formulir Kontak
+   ========================================================================== */
+.contact-form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contact-form-container textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form-container button[type="submit"] {
+  background-color: var(--link-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-container button[type="submit"]:hover {
+  background-color: #0056b3; /* Warna hover yang lebih gelap */
+}
+
+.contact-form-container p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ==========================================================================
+   12. Pagination
+   ========================================================================== */
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination a, .pagination span {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.pagination a:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination .previous,
+.pagination .next {
+  font-weight: bold;
+}
+
+.pagination .page_number {
+  background-color: #eee;
+  border: none;
+}
+
+/* ==========================================================================
+   13. Media Queries untuk Responsif (Mobile)
+   ========================================================================== */
 @media (max-width: 768px) {
   /* Umum */
   .wrapper {
@@ -323,13 +439,17 @@ a:hover {
     position: relative;
   }
 
-  .site-title {
-      margin-bottom: 0;
-  }
-
   /* Kontainer Navigasi Mobile */
+  /* display: contents; pada .mobile-nav-container di desktop
+     membuat elemen anaknya seolah-olah langsung dari parent.
+     Ini bisa rumit. Untuk mobile, kita ingin dia jadi kontainer sendiri. */
   .mobile-nav-container {
-    display: contents; /* Penting: Ini membuat elemen anak-anaknya seolah-olah anak langsung dari parent-nya */
+      /* Ini perlu disesuaikan dengan JavaScript kamu. */
+      /* Jika JS mengontrol active class pada body atau mobile-nav-container, biarkan seperti ini */
+      /* Jika JS mengontrol langsung site-nav dan overlay, ini mungkin tidak perlu diubah */
+      /* Kita akan asumsikan body.no-scroll dan mobile-nav-container.active */
+      display: block; /* Menjadikan kembali blok untuk mobile */
+      position: relative;
   }
 
   /* Tombol Hamburger */
@@ -386,8 +506,9 @@ a:hover {
     pointer-events: none; /* Awalnya tidak bisa diklik */
   }
 
-  /* Saat mobile-nav-container aktif, overlay dan nav-links muncul */
-  .mobile-nav-container.active .mobile-nav-overlay {
+  /* Saat mobile-nav-container atau body aktif, overlay dan nav-links muncul */
+  .mobile-nav-container.active .mobile-nav-overlay,
+  body.nav-active .mobile-nav-overlay { /* Menambahkan body.nav-active sebagai alternatif */
     opacity: 1;
     visibility: visible;
     pointer-events: auto; /* Bisa diklik saat aktif */
@@ -395,25 +516,26 @@ a:hover {
 
   /* Navigasi mobile (slide dari samping) */
   .site-nav {
-    display: flex;
+    display: flex; /* Tampilkan flex saat aktif, sembunyikan dengan 'right' */
     flex-direction: column;
     align-items: flex-start;
     position: fixed; /* Penting: fixed agar menutupi seluruh viewport */
     top: 0;
-    right: calc(-1 * var(--mobile-nav-width));
+    right: calc(-1 * var(--mobile-nav-width)); /* Sembunyikan di luar layar */
     width: var(--mobile-nav-width);
     height: 100%;
     background-color: var(--header-footer-bg);
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    padding: 80px 0 20px;
+    padding: 80px 0 20px; /* Padding atas untuk judul di mobile nav */
     transition: right 0.3s ease-out;
     z-index: 1001;
-    overflow-y: auto;
+    overflow-y: auto; /* Scroll jika konten nav terlalu panjang */
     pointer-events: none; /* Awalnya tidak bisa diklik */
   }
 
-  .mobile-nav-container.active .site-nav {
-    right: 0;
+  .mobile-nav-container.active .site-nav,
+  body.nav-active .site-nav { /* Menambahkan body.nav-active sebagai alternatif */
+    right: 0; /* Tampilkan menu */
     pointer-events: auto; /* Bisa diklik saat aktif */
   }
 
@@ -425,7 +547,7 @@ a:hover {
   }
 
   .site-nav .page-link:last-child {
-      border-bottom: none;
+      border-bottom: none; /* Hapus border di link terakhir */
   }
 
   /* Daftar Postingan (di index.md) */
@@ -454,42 +576,3 @@ a:hover {
       padding: 20px;
   }
 }
-
-.pagination {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.pagination a, .pagination span {
-  display: inline-block;
-  padding: 8px 16px;
-  margin: 0 5px;
-  border: 1px solid #ddd;
-  text-decoration: none;
-  color: #333;
-  border-radius: 4px;
-}
-
-.pagination a:hover {
-  background-color: #f0f0f0;
-}
-
-.pagination .previous,
-.pagination .next {
-  font-weight: bold;
-}
-
-.pagination .page_number {
-  background-color: #eee;
-  border: none;
-}
-
-/* Jika kamu menggunakan kelas khusus untuk gambar di Markdown (misal: ![alt text](url){: .my-image }) */
-.my-image { /* Ganti '.my-image' dengan nama kelas yang kamu pakai */
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-
