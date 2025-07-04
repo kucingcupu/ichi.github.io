@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Menampilkan Gambar di blog jekyll"
-date: 2025-07-02 20:00:00 +0700
-categories: jekyll update
+date: 2025-07-04 13:00:00 +0700
+categories: jekyll
 ---
 
 Dalam menampilkan gambar untuk bahasa markdown seperti yang terilahat dibawah ini;
