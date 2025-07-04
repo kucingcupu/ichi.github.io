@@ -2,7 +2,7 @@
 layout: post
 title: "Menampilkan Gambar di blog jekyll"
 date: 2025-07-04 13:00:00 +0700
-categories: General
+categories: jekyll
 ---
 
 Ketika kita ingin menampilkan gambar di blog jekyll yang responsif, seperti ini  untuk syntax markdownnya;
