@@ -10,7 +10,7 @@ paginate_path: "/page:num/"
     <div class="post-item">
       <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
       <p class="post-meta">{{ post.date | date: "%b %d, %Y" }}</p>
-      {{ post.content | strip_html | truncatewords: 30 }} {# Kode baru di sini #}
+      {{ post.content | strip_html | truncatewords: 30 }}
       <a href="{{ post.url | relative_url }}">Read More</a>
     </div>
     {% unless forloop.last %} {# Ini untuk memastikan HR tidak muncul setelah artikel terakhir #}
