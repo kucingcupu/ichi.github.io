@@ -484,14 +484,6 @@ a:hover {
   border: none;
 }
 
-/* Pastikan gambar responsif di postingan */
-img {
-    max-width: 100%; /* Gambar tidak akan melebihi lebar elemen induknya */
-    height: auto;    /* Tinggi akan menyesuaikan secara proporsional */
-    display: block;  /* Penting untuk menghapus spasi ekstra di bawah gambar */
-    margin: 0 auto;  /* Opsional: Memusatkan gambar */
-}
-
 /* Jika kamu menggunakan kelas khusus untuk gambar di Markdown (misal: ![alt text](url){: .my-image }) */
 .my-image { /* Ganti '.my-image' dengan nama kelas yang kamu pakai */
     max-width: 100%;
