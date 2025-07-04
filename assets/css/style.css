@@ -454,3 +454,32 @@ a:hover {
       padding: 20px;
   }
 }
+
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination a, .pagination span {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.pagination a:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination .previous,
+.pagination .next {
+  font-weight: bold;
+}
+
+.pagination .page_number {
+  background-color: #eee;
+  border: none;
+}
