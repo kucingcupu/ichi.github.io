@@ -17,7 +17,7 @@ Jika kamu mencari solusi komentar yang:
 
 Maka Giscus adalah pilihan yang sangat menarik untuk blog Jekyll kamu! Mari kita telusuri bagaimana cara mengintegrasikannya.
 
-<br>>
+<br>
 
 ### Mengapa Memilih Giscus?
 
