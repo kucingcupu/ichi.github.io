@@ -15,25 +15,53 @@ layout: default
 
 </article>
 
+{% comment %}
+  Hanya tampilkan bagian komentar jika 'comments: false' tidak ada di front matter artikel.
+{% endcomment %}
 {% if page.comments != false %}
-  <hr>
+  <hr> 
   <section class="comments">
     <h2>Diskusi</h2>
+    
+    {% comment %}
+      
+    {% endcomment %}
+    {% assign giscus_category_name = site.giscus.default_category_name %}
+    {% assign giscus_category_id = site.giscus.default_category_id %}
+
+    {% comment %}
+      
+    {% endcomment %}
+    {% if page.categories %}
+      {% for category in page.categories limit: 1 %}
+        {% for mapping in site.giscus.category_mapping %}
+          {% if mapping.blog_category == category %}
+            {% assign giscus_category_name = mapping.giscus_category_name %}
+            {% assign giscus_category_id = mapping.giscus_category_id %}
+            {% break %} {# Hentikan loop segera setelah mapping ditemukan #}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endif %}
+
     <script src="https://giscus.app/client.js"
-        data-repo="kucingcupu/kucingcupu.github.io"
-        data-repo-id="R_kgDOPGfxxg"
-        data-category="[ENTER CATEGORY NAME HERE]"
-        data-category-id="[ENTER CATEGORY ID HERE]"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
+            data-repo="{{ site.giscus.repo }}"
+            data-repo-id="{{ site.giscus.repo_id }}"
+            data-category="{{ giscus_category_name }}"            {# Nilai dinamis dari Liquid #}
+            data-category-id="{{ giscus_category_id }}"            {# Nilai dinamis dari Liquid #}
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme" # Ganti tema sesuai selera (light, dark, preferred_color_scheme, dll.)
+            data-lang="id" # Ganti bahasa (en, id, dll.)
+            crossorigin="anonymous"
+            async>
     </script>
   </section>
 {% endif %}
+
+</body>
+</html>
 
