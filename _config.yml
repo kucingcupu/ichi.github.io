@@ -34,20 +34,23 @@ giscus:
 
   # Kategori default jika artikel tidak memiliki kategori blog atau tidak ada dalam mapping
   default_category_name: "General" # Nama kategori di GitHub Discussions
-  default_category_id: "DIC_kwDOPGfxxg4CqPXX" # ID kategori di GitHub Discussions (Dapatkan dari GraphQL Explorer)
+  default_category_id: "DIC_kwDOPGfxxs4CsdeK" # ID kategori di GitHub Discussions (Dapatkan dari GraphQL Explorer)
   
   # Mapping kategori blog Jekyll ke Giscus GitHub Discussions
   # Sesuaikan dengan kategori blog kamu dan kategori diskusi di GitHub kamu.
   category_mapping:
-    - blog_category: "teknologi" # Kategori di front matter artikel Jekyll (harus huruf kecil, tanpa spasi)
-      giscus_category_name: "Teknologi Diskusi" # Nama kategori di GitHub Discussions
-      giscus_category_id: "DIC_kwDOPGfxxg4CqP2U" # ID kategori di GitHub Discussions
+    - blog_category: "Announcements" # Kategori di front matter artikel Jekyll (harus huruf kecil, tanpa spasi)
+      giscus_category_name: "Announcements" # Nama kategori di GitHub Discussions
+      giscus_category_id: "DIC_kwDOPGfxxs4CsdeJ" # ID kategori di GitHub Discussions
+    - blog_category: "catatan"
+      giscus_category_name: "catatan"
+      giscus_category_id: "DIC_kwDOPGfxxs4CsdkA"
     - blog_category: "gaya-hidup"
-      giscus_category_name: "Gaya Hidup Diskusi"
-      giscus_category_id: "DIC_kwDOPGfxxg4CqP3A"
-    - blog_category: "resep-masakan"
-      giscus_category_name: "Resep Masakan Diskusi"
-      giscus_category_id: "DIC_kwDOPGfxxg4CqP4B"
+      giscus_category_name: "General"
+      giscus_category_id: "DIC_kwDOPGfxxs4CsdeK"
+    - blog_category: "jekyll"
+      giscus_category_name: "jekyll"
+      giscus_category_id: "DIC_kwDOPGfxxs4Csdj_"
     # Tambahkan lebih banyak mapping sesuai kebutuhan blog kamu
 
 
