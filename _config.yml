@@ -12,6 +12,7 @@ header_pages:
   - test.md
 permalink: /:title/
 
+
 # -- Build settings --
 
 # Highlight Code
@@ -25,6 +26,29 @@ kramdown:
       line_numbers: true # Menampilkan nomor baris pada blok kode
       css_classes: "highlight" # Kelas CSS yang akan digunakan untuk styling
 theme: minima # Anda bisa menggunakan tema default atau membuatnya sendiri
+
+# Konfigurasi Giscus untuk Komentar
+giscus:
+  repo: "kucingcupu/kucingcupu.github.io" # Ganti dengan nama user/repo kamu, contoh: "username/your-blog-repo"
+  repo_id: "R_kgDOPGfxxg" # Ganti dengan Repo ID dari Giscus.app
+
+  # Kategori default jika artikel tidak memiliki kategori blog atau tidak ada dalam mapping
+  default_category_name: "General" # Nama kategori di GitHub Discussions
+  default_category_id: "DIC_kwDOPGfxxg4CqPXX" # ID kategori di GitHub Discussions (Dapatkan dari GraphQL Explorer)
+  
+  # Mapping kategori blog Jekyll ke Giscus GitHub Discussions
+  # Sesuaikan dengan kategori blog kamu dan kategori diskusi di GitHub kamu.
+  category_mapping:
+    - blog_category: "teknologi" # Kategori di front matter artikel Jekyll (harus huruf kecil, tanpa spasi)
+      giscus_category_name: "Teknologi Diskusi" # Nama kategori di GitHub Discussions
+      giscus_category_id: "DIC_kwDOPGfxxg4CqP2U" # ID kategori di GitHub Discussions
+    - blog_category: "gaya-hidup"
+      giscus_category_name: "Gaya Hidup Diskusi"
+      giscus_category_id: "DIC_kwDOPGfxxg4CqP3A"
+    - blog_category: "resep-masakan"
+      giscus_category_name: "Resep Masakan Diskusi"
+      giscus_category_id: "DIC_kwDOPGfxxg4CqP4B"
+    # Tambahkan lebih banyak mapping sesuai kebutuhan blog kamu
 
 
 # Pengaturan untuk Paginasi Jekyll
