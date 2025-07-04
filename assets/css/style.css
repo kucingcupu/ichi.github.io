@@ -483,3 +483,26 @@ a:hover {
   background-color: #eee;
   border: none;
 }
+
+/* --- DEBUG CSS: Paksa Navigasi Terlihat --- */
+.mobile-nav-container .site-nav {
+    display: flex !important; /* Paksa tampil sebagai flexbox */
+    position: static !important; /* Pastikan tidak ada posisi absolut/fixed yang aneh */
+    visibility: visible !important; /* Paksa terlihat */
+    opacity: 1 !important; /* Pastikan tidak transparan */
+    height: auto !important; /* Pastikan tinggi tidak 0 */
+    max-height: none !important; /* Pastikan tinggi tidak terbatas */
+    pointer-events: auto !important; /* Pastikan bisa diklik */
+    background-color: lightblue !important; /* Beri warna latar belakang untuk lebih jelas */
+}
+
+/* Juga pastikan overlay-nya tidak menghalangi jika ada */
+.mobile-nav-overlay {
+    display: none !important;
+}
+
+/* Pastikan menu toggle tidak menyembunyikan nav */
+.menu-toggle {
+    display: block !important; /* Pastikan tombol toggle terlihat */
+}
+/* --- AKHIR DEBUG CSS --- */
