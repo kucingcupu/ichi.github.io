@@ -7,4 +7,4 @@ categories: jekyll
 
 Dalam menampilkan gambar untuk bahasa markdown seperti yang terilahat dibawah ini jika menggunakan penyimpanan gClodinary;
 
-![ini foto pernikahan](https://res.cloudinary.com/dul9bmqpf/image/upload/v1751615363/1719652900405_bczkdf.jpg)
+![ini foto pernikahan](https://res.cloudinary.com/dul9bmqpf/image/upload/w_800,f_auto,q_auto/v1751615363/1719652900405_bczkdf.jpg)
