@@ -7,4 +7,4 @@ categories: jekyll
 
 Dalam menampilkan gambar untuk bahasa markdown seperti yang terilahat dibawah ini jika menggunakan penyimpanan google drive;
 
-![ini foto pernikahan](https://drive.google.com/uc?export=view&id=1xoa9KgrepDr58aHB4RPcVy9Qc_qKZxDK)
+![ini foto pernikahan](https://drive.google.com/file/d/1xoa9KgrepDr58aHB4RPcVy9Qc_qKZxDK/preview")
